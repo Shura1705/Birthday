@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarzoo, My Love</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e; /* Dark charcoal */
+            color: #f0f8ff; /* Alice blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #2c2c4a; /* Dark purple */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 182, 193, 0.3); /* Light pink glow */
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ff69b4; /* Hot pink */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 1.1em;
+        }
+
+        .next-button, .yes-button, .no-button {
+            background-color: #ff69b4; /* Hot pink button */
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .next-button:hover, .yes-button:hover, .no-button:hover {
+            background-color: #c63d8a; /* Darker hot pink on hover */
+            transform: scale(1.05);
+        }
+
+        .proposal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .romantic-message {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #e0ffff; /* Light cyan */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
+        }
+
+        /* Fireworks Styles */
+        .fireworks-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+        }
+
+        .firework {
+            position: absolute;
+            border-radius: 50%;
+            background: #ffa07a; /* Light salmon sparks */
+            width: 12px;
+            height: 12px;
+            opacity: 0;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--dx), var(--dy)) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="birthdaySection">
+            <h1>Happy Birthday, My Dearest Aarzoo! 🎉🎂</h1>
+            <p>Wishing you a day as beautiful as your smile. 😊💖</p>
+            <p>May all your dreams come true this year. ✨🎈</p>
+            <p>Sending you lots of love and hugs on your special day. 🤗💋</p>
+            <p>You make every day brighter just by being you. 🌟❤️</p>
+            <button id="blessingsButton" class="next-button">Click for Blessings</button>
+        </div>
+
+        <div id="blessingsSection" style="display: none;">
+            <h2>Blessings just for you... 🙏</h2>
+            <p>May your life be filled with endless joy and laughter. 😄💕</p>
+            <p>Wishing you strength and happiness in all your endeavors. 💪❤️</p>
+            <p>May you always be surrounded by love and warmth. 🥰🔥</p>
+            <p>May this year bring you closer to your dreams. 🌠💫</p>
+            <p>Sending you my best wishes for a fantastic year ahead. 🎉💖</p>
+            <button id="messagesButton" class="next-button">Click for Romantic Messages</button>
+        </div>
+
+        <div id="messagesSection" style="display: none;">
+            <h2>Romantic Whispers... 💌</h2>
+            <p class="romantic-message">Every beat of my heart calls out for you. ❤️🎶</p>
+            <p class="romantic-message">In your eyes, I find my universe. 🌌😍</p>
+            <p class="romantic-message">Your love is the melody of my soul. 🎵💖</p>
+            <p class="romantic-message">With you, every moment is magical. ✨💋</p>
+            <p class="romantic-message">You are the missing piece I never knew I was searching for. 🧩❤️</p>
+            <p class="romantic-message">मेरी हर दुआ में तेरा ही नाम है,<br>ये धड़कन भी अब तेरे ही नाम है। ❤️😘</p>
+            <p class="romantic-message">तेरी आँखों में दिखता है मेरा जहां सारा,<br>तू ही मेरी सुबह है, तू ही मेरा सितारा। ✨💖</p>
+            <p class="romantic-message">बिन तेरे ये ज़िंदगी अधूरी सी लगती है,<br>हर सांस में तेरी ही कमी खलती है। 😔❤️</p>
+            <p class="romantic-message">जब तुम मुस्कुराती हो तो सब कुछ रोशन हो जाता है,<br>मेरे दिल को एक सुकून सा मिल जाता है। 😊💕</p>
+            <p class="romantic-message">तेरे ख़यालों में ही खोया रहता हूँ हर पल,<br>तू मेरी रूह में बसी एक प्यारी सी हलचल। 🥰💋</p>
+            <button id="proposalButton" class="next-button">Ready for the Big Question? 😉💖</button>
+        </div>
+
+        <div id="proposalSection" style="display: none;">
+            <h2>My Heart's Plea... 🌹</h2>
+            <p>तुम मेरी ज़िंदगी की सबसे खूबसूरत एहसास हो। ❤️</p>
+            <p>हर सुबह तेरी याद से शुरू होती है, और हर रात तेरे ख़्वाबों में खो जाती है। 🌙💖</p>
+            <p>तेरे साथ हँसना, तेरे साथ रोना, हर पल अनमोल है। 😊😢❤️</p>
+            <p>मेरी दुनिया तुम से शुरू होती है और तुम पर ही ख़त्म। 🌍💋</p>
+            <p>क्या तुम हमेशा के लिए मेरी बनोगी? Will you be mine forever? 💍❤️</p>
+            <div class="proposal-buttons">
+                <button id="yesButton" class="yes-button"> हाँ! Yes! 🥰💖</button>
+                <button id="noButton" class="no-button">नहीं! No 😔💔</button>
+            </div>
+            <div id="proposalResult" style="display: none; margin-top: 25px; font-size: 1.2em; color: #f08080;"></div>
+        </div>
+
+        <div id="fireworksSection" style="display: none;">
+            <h1>She said YES! 🎉🥳💖💖💖</h1>
+            <div class="fireworks-container"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const birthdaySection = document.getElementById('birthdaySection');
+            const blessingsButton = document.getElementById('blessingsButton');
+            const blessingsSection = document.getElementById('blessingsSection');
+            const messagesButton = document.getElementById('messagesButton');
+            const messagesSection = document.getElementById('messagesSection');
+            const proposalButton = document.getElementById('proposalButton');
+            const proposalSection = document.getElementById('proposalSection');
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+            const proposalResult = document.getElementById('proposalResult');
+            const fireworksSection = document.getElementById('fireworksSection');
+            const fireworksContainer = document.querySelector('.fireworks-container');
+
+            blessingsButton.addEventListener('click', function() {
+                birthdaySection.style.display = 'none';
+                blessingsSection.style.display = 'block';
+            });
+
+            messagesButton.addEventListener('click', function() {
+                blessingsSection.style.display = 'none';
+                messagesSection.style.display = 'block';
+            });
+
+            proposalButton.addEventListener('click', function() {
+                messagesSection.style.display = 'none';
+                proposalSection.style.display = 'block';
+            });
+
+            yesButton.addEventListener('click', function() {
+                proposalSection.style.display = 'none';
+                fireworksSection.style.display = 'block';
+                proposalResult.textContent = 'She said YES! 🥰💖';
+                proposalResult.style.display = 'block';
+                triggerFireworks();
+                console.log("Aarzoo said YES!");
+            });
+
+            noButton.addEventListener('click', function() {
+                proposalResult.textContent = 'She said No 😔 It\'s okay, there\'s always more love to give. ❤️';
+                proposalResult.style.display = 'block';
+                console.log("Aarzoo said NO.");
+            });
+
+            function triggerFireworks() {
+                for (let i = 0; i < 50; i++) {
+                    createFirework();
+                }
+            }
+
+            function createFirework() {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
+                const x = Math.random() * 200;
+                const y = Math.random() * 200;
+                const dx = (Math.random() - 0.5) * 100;
+                const dy = (Math.random() - 0.5) * 100;
+                firework.style.left = `${x}px`;
+                firework.style.top = `${y}px`;
+                firework.style.setProperty('--dx', `${dx}px`);
+                firework.style.setProperty('--dy', `${dy}px`);
+                fireworksContainer.appendChild(firework);
+                setTimeout(() => {
+                    firework.remove();
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
